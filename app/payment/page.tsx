@@ -19,7 +19,7 @@ import {
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
 import { useCartStore } from '@/lib/store';
-import { useToast } from '@/components/ui/use-toast';
+import { useToast } from "@/hooks/use-toast"
 
 export default function PaymentPage() {
   const router = useRouter();

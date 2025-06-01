@@ -16,7 +16,7 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { Label } from '@/components/ui/label';
 import { Separator } from '@/components/ui/separator';
 import { AlertCircle, Download, CheckCircle } from 'lucide-react';
-import { useToast } from '@/components/ui/use-toast';
+import { useToast } from "@/hooks/use-toast"
 
 export default function ConfirmationPage() {
   const router = useRouter();

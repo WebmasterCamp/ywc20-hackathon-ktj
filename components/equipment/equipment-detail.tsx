@@ -39,7 +39,7 @@ import {
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
 import { Badge } from '@/components/ui/badge';
-import { useToast } from '@/components/ui/use-toast';
+import { useToast } from "@/hooks/use-toast"
 import { useCompareStore, useCartStore } from '@/lib/store';
 import ToolReviews from './tool-reviews';
 

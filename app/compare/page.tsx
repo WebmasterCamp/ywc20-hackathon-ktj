@@ -16,7 +16,7 @@ import {
 import { X, Star, ArrowLeft, ShoppingCart } from 'lucide-react';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { useCompareStore, useCartStore } from '@/lib/store';
-import { useToast } from '@/components/ui/use-toast';
+import { useToast } from "@/hooks/use-toast"
 
 export default function ComparePage() {
   const router = useRouter();

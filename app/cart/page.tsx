@@ -18,7 +18,8 @@ import { Separator } from '@/components/ui/separator';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Label } from '@/components/ui/label';
 import { useCartStore } from '@/lib/store';
-import { useToast } from '@/components/ui/use-toast';
+import { Toaster } from "@/components/ui/toaster"
+import { useToast } from "@/hooks/use-toast"
 
 export default function CartPage() {
   const router = useRouter();
