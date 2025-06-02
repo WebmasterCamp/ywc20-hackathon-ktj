@@ -54,6 +54,12 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: "https",
+        hostname: "images-ext-1.discordapp.net",
+        port: "",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
         hostname: "cdnimg.webstaurantstore.com",
         port: "",
         pathname: "/**",
