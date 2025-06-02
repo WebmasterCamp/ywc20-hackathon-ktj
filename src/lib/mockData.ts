@@ -249,18 +249,6 @@ export const mockBlogArticles: BlogArticle[] = [
     date: "2023-10-26",
   },
   {
-    slug: "deck-building-guide", // รหัสบทความ
-    title: "วิธีสร้างดาดฟ้า: คู่มือสำหรับผู้เริ่มต้น", // ชื่อบทความ
-    excerpt:
-      "เรียนรู้พื้นฐานการสร้างดาดฟ้า ตั้งแต่การวางแผนจนถึงการตกแต่งขั้นสุดท้าย เรามีรายการเครื่องมือที่คุณจะต้องใช้", // สรุปย่อ
-    thumbnail: "https://placehold.co/400x250.png?text=Deck+Building+Guide",
-    aiHint: "wood deck",
-    difficulty: "Hard",
-    duration: "โครงการสุดสัปดาห์",
-    cost: "฿10,000 - ฿50,000+",
-    date: "2023-11-05",
-  },
-  {
     slug: "basic-home-repairs", // รหัสบทความ
     title: "5 อันดับงานซ่อมแซมบ้านพื้นฐานที่คุณทำเองได้", // ชื่อบทความ
     excerpt:
