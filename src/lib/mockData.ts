@@ -2,10 +2,10 @@
 import type { Tool, CategoryInfo, BlogArticle, QuickTopic } from '@/types';
 
 export const mockCategories: CategoryInfo[] = [
-  { id: 'basic', name: 'Basic Tools', image: 'https://placehold.co/300x200.png?text=Basic+Tools', aiHint: 'tools hammer' },
-  { id: 'construction', name: 'Construction / Concrete Tools', image: 'https://placehold.co/300x200.png?text=Concrete+Tools', aiHint: 'concrete mixer' },
-  { id: 'measuring', name: 'Measuring and Testing Tools', image: 'https://placehold.co/300x200.png?text=Measuring+Tools', aiHint: 'tape measure' },
-  { id: 'home-repair', name: 'Home Repair Tools', image: 'https://placehold.co/300x200.png?text=Home+Repair', aiHint: 'toolbox wrench' },
+  { id: 'basic', name: 'เครื่องมือพื้นฐาน', image: 'https://placehold.co/300x200.png?text=Basic+Tools', aiHint: 'tools hammer' },
+  { id: 'construction', name: 'เครื่องมือก่อสร้าง / งานคอนกรีต', image: 'https://placehold.co/300x200.png?text=Concrete+Tools', aiHint: 'concrete mixer' },
+  { id: 'measuring', name: 'เครื่องมือวัดและทดสอบ', image: 'https://placehold.co/300x200.png?text=Measuring+Tools', aiHint: 'tape measure' },
+  { id: 'home-repair', name: 'เครื่องมือซ่อมแซมบ้าน', image: 'https://placehold.co/300x200.png?text=Home+Repair', aiHint: 'toolbox wrench' },
   { id: 'electrical-general', name: 'Electrical Tools', image: 'https://placehold.co/300x200.png?text=Electrical+Tools', aiHint: 'multimeter pliers' },
   { id: 'electrical-system', name: 'Electrical System Tools', image: 'https://placehold.co/300x200.png?text=Electrical+System', aiHint: 'circuit breaker' },
   { id: 'accessories', name: 'Accessories / Safety Equipment', image: 'https://placehold.co/300x200.png?text=Safety+Gear', aiHint: 'safety goggles' },
@@ -15,15 +15,15 @@ export const mockCategories: CategoryInfo[] = [
 export const mockTools: Tool[] = [
   {
     id: '1',
-    name: 'Heavy Duty Electric Drill XR-5000',
+    name: 'สว่านไฟฟ้าสำหรับงานหนัก XR-5000',
     image: 'https://placehold.co/400x400.png?text=Electric+Drill',
     aiHint: 'electric drill',
     stock: 3,
     lowStockThreshold: 5,
     priceBuy: 3500,
     priceRent: 500,
-    categories: ['basic', 'electrical-general'],
-    descriptionShort: 'A powerful drill for all your home and professional needs. Comes with multiple attachments.',
+    categories: ['basic', 'electrical-general', 'home-repair'],
+    descriptionShort: 'สว่านทรงพลังสำหรับทุกความต้องการในบ้านและงานมืออาชีพ มาพร้อมอุปกรณ์เสริมหลากหลาย',
     descriptionFull: 'The XR-5000 is a versatile and robust electric drill designed for a wide range of applications. Whether you are a DIY enthusiast or a professional contractor, this drill offers the power and precision you need. Features variable speed control, a comfortable grip, and a durable chuck.',
     rating: 4.5,
     sku: 'HD-ED-XR5000',
@@ -44,23 +44,23 @@ export const mockTools: Tool[] = [
       'Max Drilling (Masonry)': '16mm',
     },
     howToUseSteps: [
-      { id: 'step1', title: 'Safety First', mediaUrl: 'https://placehold.co/600x400.png?text=Safety+First', description: 'Always wear safety goggles and gloves before operating the drill.', aiHint: 'safety equipment' },
-      { id: 'step2', title: 'Insert Bit', mediaUrl: 'https://placehold.co/600x400.png?text=Insert+Bit', description: 'Ensure the drill is unplugged. Open the chuck, insert the desired drill bit, and tighten the chuck firmly.', aiHint: 'drill bit' },
-      { id: 'step3', title: 'Set Speed', mediaUrl: 'https://placehold.co/600x400.png?text=Set+Speed', description: 'Select the appropriate speed setting for your material. Lower speeds for metal, higher for wood.', aiHint: 'speed control' },
-      { id: 'step4', title: 'Drilling', mediaUrl: 'https://placehold.co/600x400.png?text=Drilling', description: 'Hold the drill firmly with both hands. Apply steady pressure and begin drilling.', aiHint: 'drilling wood' },
+      { id: 'step1', title: 'ความปลอดภัยต้องมาก่อน', mediaUrl: 'https://placehold.co/600x400.png?text=Safety+First', description: 'สวมแว่นตานิรภัยและถุงมือเสมอก่อนใช้งานสว่าน', aiHint: 'safety equipment' },
+      { id: 'step2', title: 'ใส่ดอกสว่าน', mediaUrl: 'https://placehold.co/600x400.png?text=Insert+Bit', description: 'ตรวจสอบให้แน่ใจว่าไม่ได้เสียบปลั๊กสว่าน เปิดหัวจับ ใส่ดอกสว่านที่ต้องการ แล้วขันหัวจับให้แน่น', aiHint: 'drill bit' },
+      { id: 'step3', title: 'ตั้งค่าความเร็ว', mediaUrl: 'https://placehold.co/600x400.png?text=Set+Speed', description: 'เลือกความเร็วที่เหมาะสมกับวัสดุของคุณ ใช้ความเร็วต่ำสำหรับโลหะ ความเร็วสูงสำหรับไม้', aiHint: 'speed control' },
+      { id: 'step4', title: 'การเจาะ', mediaUrl: 'https://placehold.co/600x400.png?text=Drilling', description: 'จับสว่านให้มั่นคงด้วยมือทั้งสองข้าง ออกแรงกดอย่างสม่ำเสมอและเริ่มเจาะ', aiHint: 'drilling wood' },
     ]
   },
   {
     id: '2',
-    name: 'Professional Laser Level Kit',
+    name: 'ชุดระดับเลเซอร์ระดับมืออาชีพ',
     image: 'https://placehold.co/400x400.png?text=Laser+Level',
     aiHint: 'laser level',
     stock: 8,
     lowStockThreshold: 3,
     priceBuy: 2200,
     priceRent: 300,
-    categories: ['measuring'],
-    descriptionShort: 'Achieve perfect alignment with this professional-grade laser level. Ideal for hanging pictures, installing shelves, and more.',
+    categories: ['measuring', 'home-repair'],
+    descriptionShort: 'ได้แนวระดับที่สมบูรณ์แบบด้วยระดับเลเซอร์เกรดมืออาชีพ เหมาะสำหรับการแขวนรูปภาพ ติดตั้งชั้นวาง และอื่นๆ',
     rating: 4.8,
   },
   {
@@ -70,8 +70,8 @@ export const mockTools: Tool[] = [
     aiHint: 'circular saw',
     stock: 5,
     priceRent: 600,
-    categories: ['construction', 'electrical-general'],
-    descriptionShort: 'Lightweight yet powerful circular saw for precise cuts in wood and plastic.',
+    categories: ['construction', 'electrical-general', 'home-repair'],
+    descriptionShort: 'เลื่อยวงเดือนน้ำหนักเบาแต่ทรงพลังสำหรับการตัดไม้และพลาสติกที่แม่นยำ',
     rating: 4.2,
   },
   {
@@ -81,8 +81,8 @@ export const mockTools: Tool[] = [
     aiHint: 'vacuum cleaner',
     stock: 2,
     lowStockThreshold: 2,
-    priceBuy: 4800,
     priceRent: 750,
+ priceBuy: 4800,
     categories: ['home-repair', 'accessories'],
     descriptionShort: 'High-capacity vacuum for cleaning up workshops, garages, and renovation sites.',
     rating: 4.6,
@@ -94,8 +94,8 @@ export const mockTools: Tool[] = [
     aiHint: 'tool set',
     stock: 15,
     priceBuy: 1200,
-    priceRent: 150,
-    categories: ['basic', 'home-repair'],
+    priceRent: 150, // Price is per set per rental period (e.g., day)
+    categories: ['basic', 'home-repair', 'accessories'],
     descriptionShort: 'Essential hand tools for everyday repairs and DIY projects. Includes hammer, screwdrivers, pliers, and more.',
     rating: 4.0,
   },
@@ -105,14 +105,14 @@ export const mockTools: Tool[] = [
     image: 'https://placehold.co/400x400.png?text=Concrete+Mixer',
     aiHint: 'concrete mixer',
     stock: 4,
-    priceRent: 1200,
+    priceRent: 1200, // Price per day
     categories: ['construction'],
-    descriptionShort: '50-liter capacity concrete mixer for small to medium-sized projects.',
+    descriptionShort: 'เครื่องผสมคอนกรีตความจุ 50 ลิตร สำหรับโครงการขนาดเล็กถึงขนาดกลาง',
     rating: 4.3,
   },
 ];
 
-export const mockQuickTopics: QuickTopic[] = [
+export const mockQuickTopics: QuickTopic[] = [ // เพิ่มหัวข้อด่วน
   { 
     id: '1', 
     text: 'Planning to renovate? These tools might suit you.', 
@@ -121,20 +121,20 @@ export const mockQuickTopics: QuickTopic[] = [
     aiHint: 'home renovation'
   },
   { 
-    id: '2', 
-    text: 'What tools do I need for concrete work? A comprehensive guide.', 
-    link: '/blog/guide-concrete-tools',
+ id: '2',
+    text: 'งานคอนกรีตต้องใช้เครื่องมืออะไรบ้าง? คู่มือฉบับสมบูรณ์',
+    link: '/blog/guide-concrete-tools', // ลิงก์ไปยังบทความแนะนำ
     image: 'https://placehold.co/400x200.png?text=Concrete+Work+Guide',
     aiHint: 'concrete tools'
   },
   { 
-    id: '3', 
-    text: 'Deck building essentials for your next outdoor project.', 
-    link: '/blog/deck-building-guide',
-    image: 'https://placehold.co/400x200.png?text=Deck+Building',
+    id: '3', // เพิ่มหัวข้อการสร้างดาดฟ้า
+    text: 'สิ่งจำเป็นในการสร้างดาดฟ้าสำหรับโครงการภายนอกครั้งต่อไปของคุณ',
+    link: '/blog/deck-building-guide', // ลิงก์ไปยังบทความแนะนำ
+    image: 'https://placehold.co/400x200.png?text=Deck+Building', // ภาพประกอบ
     aiHint: 'deck construction'
   },
-  { 
+  {
     id: '4', 
     text: 'Get started with basic tools: A must-have list for beginners.', 
     link: '/equipment?category=basic',
@@ -145,86 +145,86 @@ export const mockQuickTopics: QuickTopic[] = [
 
 export const mockBlogArticles: BlogArticle[] = [
   {
-    slug: 'guide-concrete-tools',
-    title: 'The Ultimate Guide to Concrete Work Tools',
-    subtitle: 'Everything you need to know for your next concrete project.',
-    excerpt: 'Working with concrete requires specific tools for mixing, pouring, and finishing. This guide covers the essentials...',
+    slug: 'guide-concrete-tools', // รหัสบทความ (ใช้ใน URL)
+    title: 'สุดยอดคู่มือเครื่องมืองานคอนกรีต', // ชื่อบทความ
+    subtitle: 'ทุกสิ่งที่คุณต้องรู้สำหรับโครงการคอนกรีตครั้งต่อไปของคุณ', // คำบรรยายย่อ
+    excerpt: 'การทำงานกับคอนกรีตต้องใช้เครื่องมือเฉพาะสำหรับการผสม การเท และการตกแต่ง คู่มือนี้ครอบคลุมสิ่งจำเป็น...', // สรุปย่อ
     thumbnail: 'https://placehold.co/400x250.png?text=Concrete+Guide',
     aiHint: 'concrete tools',
     difficulty: 'Medium',
     duration: '2-3 hours read/prep',
     cost: 'Varies',
     content: `
-      <h2 id="intro">Introduction to Concrete Work</h2>
-      <p>Concrete work can be challenging but rewarding. Having the right tools is crucial for success.</p>
+      <h2 id="intro">บทนำสู่งานคอนกรีต</h2>
+      <p>งานคอนกรีตอาจท้าทายแต่ก็คุ้มค่า การมีเครื่องมือที่เหมาะสมเป็นสิ่งสำคัญสำหรับความสำเร็จ</p>
       <img src="https://placehold.co/600x300.png?text=Pouring+Concrete" alt="Concrete work in progress" data-ai-hint="concrete pouring"/>
-      <h3 id="mixing">1. Mixing Tools</h3>
-      <p>A good quality concrete mixer can save you a lot of time and effort. For smaller jobs, a wheelbarrow and shovel might suffice.</p>
-      <h3 id="pouring">2. Pouring and Spreading Tools</h3>
-      <p>Use shovels, rakes, and concrete spreaders to distribute the concrete evenly.</p>
-      <h3 id="finishing">3. Finishing Tools</h3>
-      <p>Trowels, floats, and edgers are essential for a smooth and professional finish.</p>
-      <h3 id="safety">4. Safety Gear</h3>
-      <p>Remember to always prioritize safety by wearing appropriate gear like gloves, boots, and eye protection.</p>
+      <h3 id="mixing">1. เครื่องมือผสม</h3>
+      <p>เครื่องผสมคอนกรีตคุณภาพดีช่วยประหยัดเวลาและแรงงานได้มาก สำหรับงานขนาดเล็ก รถเข็นและพลั่วอาจเพียงพอ</p>
+      <h3 id="pouring">2. เครื่องมือสำหรับเทและเกลี่ย</h3>
+      <p>ใช้พลั่ว คราด และเกรียงเกลี่ยคอนกรีตเพื่อกระจายคอนกรีตให้สม่ำเสมอ</p>
+      <h3 id="finishing">3. เครื่องมือตกแต่งผิว</h3>
+      <p>เกรียงฉาบ, เกรียงขัด, และเกรียงทำขอบ เป็นสิ่งจำเป็นสำหรับการตกแต่งผิวที่เรียบเนียนและเป็นมืออาชีพ</p>
+      <h3 id="safety">4. อุปกรณ์ความปลอดภัย</h3>
+      <p>อย่าลืมให้ความสำคัญกับความปลอดภัยเสมอโดยการสวมอุปกรณ์ที่เหมาะสม เช่น ถุงมือ รองเท้าบู๊ต และอุปกรณ์ป้องกันดวงตา</p>
     `,
-    relatedProducts: mockTools.filter(tool => tool.categories.includes('construction')).slice(0, 3),
+ relatedProducts: mockTools.filter(tool => tool.categories.includes('construction')).slice(0, 3), // สินค้าที่เกี่ยวข้อง
     toc: [
-      { id: 'intro', title: 'Introduction', level: 2 },
-      { id: 'mixing', title: 'Mixing Tools', level: 3 },
-      { id: 'pouring', title: 'Pouring and Spreading', level: 3 },
-      { id: 'finishing', title: 'Finishing Tools', level: 3 },
-      { id: 'safety', title: 'Safety Gear', level: 3 },
+      { id: 'intro', title: 'บทนำ', level: 2 }, // สารบัญ
+      { id: 'mixing', title: 'เครื่องมือผสม', level: 3 },
+      { id: 'pouring', title: 'การเทและเกลี่ย', level: 3 },
+      { id: 'finishing', title: 'เครื่องมือตกแต่งผิว', level: 3 },
+      { id: 'safety', title: 'อุปกรณ์ความปลอดภัย', level: 3 },
     ],
     date: '2023-10-26',
   },
   {
-    slug: 'deck-building-guide',
-    title: 'How to Build a Deck: A Beginner\'s Guide',
-    excerpt: 'Learn the basics of deck construction, from planning to finishing touches. We list the tools you\'ll need.',
+    slug: 'deck-building-guide', // รหัสบทความ
+    title: 'วิธีสร้างดาดฟ้า: คู่มือสำหรับผู้เริ่มต้น', // ชื่อบทความ
+    excerpt: 'เรียนรู้พื้นฐานการสร้างดาดฟ้า ตั้งแต่การวางแผนจนถึงการตกแต่งขั้นสุดท้าย เรามีรายการเครื่องมือที่คุณจะต้องใช้', // สรุปย่อ
     thumbnail: 'https://placehold.co/400x250.png?text=Deck+Building+Guide',
     aiHint: 'wood deck',
     difficulty: 'Hard',
-    duration: 'Weekend project',
-    cost: '฿10,000 - ฿50,000',
+    duration: 'โครงการสุดสัปดาห์',
+    cost: '฿10,000 - ฿50,000+',
     date: '2023-11-05',
   },
   {
-    slug: 'basic-home-repairs',
-    title: 'Top 5 Basic Home Repairs You Can Do Yourself',
-    excerpt: 'Save money and gain satisfaction by tackling these simple home repairs with basic tools.',
+    slug: 'basic-home-repairs', // รหัสบทความ
+    title: '5 อันดับงานซ่อมแซมบ้านพื้นฐานที่คุณทำเองได้', // ชื่อบทความ
+    excerpt: 'ประหยัดเงินและรู้สึกดีกับตัวเองด้วยการซ่อมแซมบ้านง่ายๆ ด้วยเครื่องมือพื้นฐาน', // สรุปย่อ
     thumbnail: 'https://placehold.co/400x250.png?text=Home+Repairs',
     aiHint: 'home repair',
     difficulty: 'Easy',
-    duration: '1-2 hours per repair',
-    cost: 'Low',
+    duration: '1-2 ชั่วโมงต่อการซ่อม',
+    cost: 'ต่ำ',
     date: '2023-09-15',
   },
   {
-    slug: 'painting-like-a-pro',
-    title: 'Painting Techniques for a Professional Finish',
-    excerpt: 'Learn simple techniques to make your next painting project look like it was done by a professional.',
+    slug: 'painting-like-a-pro', // รหัสบทความ
+    title: 'เทคนิคการทาสีเพื่อให้ได้งานระดับมืออาชีพ', // ชื่อบทความ
+    excerpt: 'เรียนรู้เทคนิคง่ายๆ เพื่อให้โครงการทาสีครั้งต่อไปของคุณดูเหมือนทำโดยมืออาชีพ', // สรุปย่อ
     thumbnail: 'https://placehold.co/400x250.png?text=Pro+Painting',
     aiHint: 'painting wall',
     difficulty: 'Easy',
-    duration: '3-4 hours',
-    cost: 'Low',
+    duration: '3-4 ชั่วโมง',
+    cost: 'ต่ำ',
     date: '2023-11-10',
   },
   {
-    slug: 'choosing-right-ladder',
-    title: 'Choosing the Right Ladder for the Job',
-    excerpt: 'Safety first! This guide helps you select the appropriate ladder for different tasks around the house.',
+    slug: 'choosing-right-ladder', // รหัสบทความ
+    title: 'การเลือกบันไดที่เหมาะสมกับงาน', // ชื่อบทความ
+    excerpt: 'ความปลอดภัยต้องมาก่อน! คู่มือนี้ช่วยคุณเลือกบันไดที่เหมาะสมสำหรับงานต่างๆ รอบบ้าน', // สรุปย่อ
     thumbnail: 'https://placehold.co/400x250.png?text=Right+Ladder',
     aiHint: 'ladder safety',
     difficulty: 'Easy',
-    duration: '30 min read',
-    cost: 'Varies',
+    duration: 'อ่าน 30 นาที',
+    cost: 'หลากหลาย',
     date: '2023-10-01',
   },
   {
-    slug: 'garden-tool-maintenance',
-    title: 'Essential Maintenance for Your Gardening Tools',
-    excerpt: 'Keep your gardening tools in top shape with these simple maintenance tips for longevity and performance.',
+    slug: 'garden-tool-maintenance', // รหัสบทความ
+    title: 'การบำรุงรักษาเครื่องมือทำสวนที่จำเป็น', // ชื่อบทความ
+    excerpt: 'ดูแลเครื่องมือทำสวนของคุณให้อยู่ในสภาพดีเยี่ยมด้วยเคล็ดลับการบำรุงรักษาง่ายๆ เพื่ออายุการใช้งานที่ยาวนานและประสิทธิภาพที่ดี', // สรุปย่อ
     thumbnail: 'https://placehold.co/400x250.png?text=Garden+Tool+Care',
     aiHint: 'gardening tools',
     difficulty: 'Easy',
@@ -233,25 +233,25 @@ export const mockBlogArticles: BlogArticle[] = [
     date: '2023-09-20',
   },
   {
-    slug: 'installing-shelves-101',
-    title: 'Installing Shelves 101: A Step-by-Step Guide',
-    excerpt: 'Add storage and style to your home by learning how to properly install wall shelves. Perfect for beginners!',
+    slug: 'installing-shelves-101', // รหัสบทความ
+    title: 'การติดตั้งชั้นวาง 101: คู่มือทีละขั้นตอน', // ชื่อบทความ
+    excerpt: 'เพิ่มพื้นที่จัดเก็บและสไตล์ให้กับบ้านของคุณด้วยการเรียนรู้วิธีติดตั้งชั้นวางติดผนังอย่างถูกต้อง เหมาะสำหรับผู้เริ่มต้น!', // สรุปย่อ
     thumbnail: 'https://placehold.co/400x250.png?text=Install+Shelves',
     aiHint: 'wall shelves',
     difficulty: 'Easy',
     duration: '2 hours',
-    cost: 'Low',
+    cost: 'ต่ำ',
     date: '2023-11-15',
   },
   {
-    slug: 'unclogging-drain-basics',
-    title: 'DIY Drain Unclogging: Simple Fixes Before Calling a Plumber',
-    excerpt: 'Learn basic techniques to unclog common household drains using simple tools and methods.',
+    slug: 'unclogging-drain-basics', // รหัสบทความ
+    title: 'DIY แก้ท่อระบายน้ำอุดตัน: วิธีแก้ไขง่ายๆ ก่อนเรียกช่างประปา', // ชื่อบทความ
+    excerpt: 'เรียนรู้เทคนิคพื้นฐานในการแก้ท่อระบายน้ำในครัวเรือนที่อุดตันโดยใช้เครื่องมือและวิธีการง่ายๆ', // สรุปย่อ
     thumbnail: 'https://placehold.co/400x250.png?text=Unclog+Drain',
     aiHint: 'drain pipe',
     difficulty: 'Easy',
     duration: '1 hour',
-    cost: 'Very Low',
+    cost: 'ต่ำมาก',
     date: '2023-11-20',
   },
   {
@@ -262,7 +262,7 @@ export const mockBlogArticles: BlogArticle[] = [
     aiHint: 'picture frame wall',
     difficulty: 'Easy',
     duration: '30 minutes',
-    cost: 'Very Low',
+    cost: 'ต่ำมาก',
     date: '2023-11-25',
   }
 ];

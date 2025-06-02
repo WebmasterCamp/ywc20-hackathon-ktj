@@ -33,7 +33,7 @@ const BlogListPage = () => {
     if (difficultyFilter !== 'all') {
       tempArticles = tempArticles.filter(article => article.difficulty.toLowerCase() === difficultyFilter);
     }
-    
+
     setFilteredArticles(tempArticles);
     setCurrentPage(1); // Reset to first page on filter change
   }, [searchTerm, categoryFilter, difficultyFilter]);
@@ -44,7 +44,7 @@ const BlogListPage = () => {
   const FilterControls = () => (
     <div className="space-y-4">
       <div>
-        <label htmlFor="search-blog" className="block text-sm font-medium mb-1">Search Articles</label>
+        <label htmlFor="search-blog" className="block text-sm font-medium mb-1">ค้นหาบทความ</label>
         <div className="relative">
           <Input
             id="search-blog"
@@ -58,32 +58,33 @@ const BlogListPage = () => {
         </div>
       </div>
       <div>
-        <label htmlFor="difficulty-filter" className="block text-sm font-medium mb-1">Difficulty</label>
+        <label htmlFor="difficulty-filter" className="block text-sm font-medium mb-1">ระดับความยาก</label>
         <Select value={difficultyFilter} onValueChange={setDifficultyFilter}>
           <SelectTrigger id="difficulty-filter">
-            <SelectValue placeholder="Filter by difficulty" />
+            <SelectValue placeholder="กรองตามระดับความยาก" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="all">All Difficulties</SelectItem>
+            <SelectItem value="all">ทุกระดับความยาก</SelectItem>
             <SelectItem value="easy">Easy</SelectItem>
             <SelectItem value="medium">Medium</SelectItem>
             <SelectItem value="hard">Hard</SelectItem>
           </SelectContent>
         </Select>
       </div>
-       {/* Placeholder for category filter */}
+      {/* Placeholder for category filter */}
       <div>
-        <label htmlFor="category-filter" className="block text-sm font-medium mb-1">Category</label>
+        <label htmlFor="category-filter" className="block text-sm font-medium mb-1">หมวดหมู่</label>
         <Select value={categoryFilter} onValueChange={setCategoryFilter} disabled>
           <SelectTrigger id="category-filter">
-            <SelectValue placeholder="Filter by category (soon)" />
+            <SelectValue placeholder="กรองตามหมวดหมู่ (เร็วๆ นี้)" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="all">All Categories</SelectItem>
+            <SelectItem value="all">ทุกหมวดหมู่</SelectItem>
             {/* Populate with actual categories */}
           </SelectContent>
         </Select>
       </div>
+
     </div>
   );
 
@@ -92,9 +93,9 @@ const BlogListPage = () => {
     <div className="container mx-auto px-4 py-8">
       <header className="mb-10 text-center">
         <BookOpenText className="h-16 w-16 mx-auto text-primary mb-4" />
-        <h1 className="text-4xl font-bold font-headline mb-2">Blog Articles</h1>
+        <h1 className="text-4xl font-bold font-headline mb-2">บทความน่าสนใจ</h1>
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-          Find tips, guides, and inspiration for your next project. Learn how to use tools 효과적으로 and safely.
+          ค้นพบเคล็ดลับ คู่มือ และแรงบันดาลใจสำหรับโปรเจกต์ต่อไปของคุณ เรียนรู้วิธีใช้เครื่องมืออย่างมีประสิทธิภาพและปลอดภัย
         </p>
       </header>
 
@@ -111,16 +112,18 @@ const BlogListPage = () => {
             <Sheet>
               <SheetTrigger asChild>
                 <Button variant="outline" className="w-full">
-                  <ListFilter className="mr-2 h-4 w-4" /> Filters
-                </Button>
+                  <ListFilter className="mr-2 h-4 w-4" /> Filters</Button>
+
               </SheetTrigger>
               <SheetContent side="left" className="w-[300px] overflow-y-auto p-4">
+
                 <h2 className="text-xl font-semibold mb-4 font-headline">Filters</h2>
                 <FilterControls />
               </SheetContent>
+
             </Sheet>
           </div>
-          
+
           {paginatedArticles.length > 0 ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {paginatedArticles.map(article => (
@@ -129,7 +132,7 @@ const BlogListPage = () => {
             </div>
           ) : (
             <div className="text-center py-12">
-              <p className="text-xl text-muted-foreground">No articles found matching your criteria.</p>
+              <p className="text-xl text-muted-foreground">ไม่พบบทความที่ตรงกับเกณฑ์ของคุณ</p>
             </div>
           )}
 
@@ -140,17 +143,17 @@ const BlogListPage = () => {
                 onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
                 disabled={currentPage === 1}
               >
-                Previous
+                ก่อนหน้า
               </Button>
               <span className="text-sm text-muted-foreground">
-                Page {currentPage} of {totalPages}
+                หน้า {currentPage} จาก {totalPages}
               </span>
               <Button
                 variant="outline"
                 onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
                 disabled={currentPage === totalPages}
               >
-                Next
+                ถัดไป
               </Button>
             </div>
           )}

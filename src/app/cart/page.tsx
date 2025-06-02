@@ -20,9 +20,9 @@ const initialCartItems: CartItem[] = mockTools.slice(0, 2).map(tool => ({
 }));
 
 const availableAddons: AddonService[] = [
-  { id: 'delivery', name: 'Home Delivery Service', price: 200, selected: false },
-  { id: 'manuals', name: 'Access to Tool Manuals/Tutorial Videos', price: 50, selected: false },
-  { id: 'insurance', name: 'Damage Insurance Coverage', price: 150, selected: false },
+ { id: 'delivery', name: 'บริการจัดส่งถึงบ้าน', price: 200, selected: false },
+ { id: 'manuals', name: 'เข้าถึงคู่มือเครื่องมือ / วิดีโอสอน', price: 50, selected: false },
+ { id: 'insurance', name: 'ความคุ้มครองประกันความเสียหาย', price: 150, selected: false },
 ];
 
 const CartPage = () => {
@@ -67,23 +67,23 @@ const CartPage = () => {
   return (
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-3xl font-bold mb-8 font-headline flex items-center">
-        <ShoppingBag className="mr-3 h-8 w-8" /> Your Rental Cart
+ <ShoppingBag className="mr-3 h-8 w-8" /> ตะกร้าสินค้าเช่าของคุณ
       </h1>
 
       {cartItems.length === 0 ? (
         <Card className="text-center py-12">
           <CardContent>
             <ShoppingBag className="h-16 w-16 mx-auto text-muted-foreground mb-4" />
-            <CardTitle className="text-2xl mb-2">Your cart is empty</CardTitle>
-            <CardDescription className="mb-6">Looks like you have not added any tools to your cart yet.</CardDescription>
+            <CardTitle className="text-2xl mb-2">ตะกร้าสินค้าของคุณว่างเปล่า</CardTitle>
+            <CardDescription className="mb-6">ดูเหมือนว่าคุณยังไม่ได้เพิ่มเครื่องมือใดๆ ในตะกร้าสินค้าของคุณ</CardDescription>
             <Button asChild>
-              <Link href="/equipment">Browse Tools</Link>
+              <Link href="/equipment">เลือกดูเครื่องมือ</Link>
             </Button>
           </CardContent>
         </Card>
       ) : (
         <div className="grid lg:grid-cols-3 gap-8">
-          <div className="lg:col-span-2 space-y-6">
+ <div className="lg:col-span-2 space-y-6">
             {cartItems.map(item => (
               <Card key={item.id} className="flex flex-col sm:flex-row overflow-hidden">
                 <div className="sm:w-1/3 md:w-1/4 relative">
@@ -106,10 +106,10 @@ const CartPage = () => {
                         <X className="h-5 w-5" />
                       </Button>
                     </div>
-                    <p className="text-sm text-muted-foreground mb-2">Base Rent: ฿{item.priceRent.toLocaleString()}/day</p>
+                    <p className="text-sm text-muted-foreground mb-2">ราคาเช่าพื้นฐาน: ฿{item.priceRent.toLocaleString()}/วัน</p>
                     <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-3">
                       <div className="flex items-center space-x-2">
-                        <Label htmlFor={`quantity-${item.id}`} className="text-sm">Qty:</Label>
+                        <Label htmlFor={`quantity-${item.id}`} className="text-sm">จำนวน:</Label>
                         <Button variant="outline" size="icon" className="h-8 w-8" onClick={() => updateQuantity(item.id, item.quantity - 1)}><Minus className="h-4 w-4" /></Button>
                         <Input id={`quantity-${item.id}`} type="number" value={item.quantity} readOnly className="h-8 w-12 text-center px-1" />
                         <Button variant="outline" size="icon" className="h-8 w-8" onClick={() => updateQuantity(item.id, item.quantity + 1)}><Plus className="h-4 w-4" /></Button>
@@ -121,8 +121,8 @@ const CartPage = () => {
                           </SelectTrigger>
                           <SelectContent>
                             <SelectItem value="1day">1 Day</SelectItem>
-                            <SelectItem value="3days">3 Days</SelectItem>
-                            <SelectItem value="1week">1 Week</SelectItem>
+                            <SelectItem value="3days">3 วัน</SelectItem>
+                            <SelectItem value="1week">1 สัปดาห์</SelectItem>
                           </SelectContent>
                         </Select>
                       </div>
@@ -130,14 +130,14 @@ const CartPage = () => {
                   </div>
                   <p className="text-right font-semibold text-lg">Item Total: ฿{calculateRentalPrice(item).toLocaleString()}</p>
                 </div>
-              </Card>
+ </Card>
             ))}
-          </div>
+ </div>
 
           <div className="lg:col-span-1">
             <Card className="sticky top-24">
               <CardHeader>
-                <CardTitle className="text-xl font-headline">Order Summary</CardTitle>
+                <CardTitle className="text-xl font-headline">สรุปคำสั่งซื้อ</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div>
@@ -162,19 +162,19 @@ const CartPage = () => {
                 <div className="space-y-1">
                   <div className="flex justify-between text-sm">
                     <span>Subtotal (Tools):</span>
-                    <span>฿{subtotal.toLocaleString()}</span>
+ <span>฿{subtotal.toLocaleString()}</span>
                   </div>
                   <div className="flex justify-between text-sm">
                     <span>Add-ons:</span>
-                    <span>฿{addonsTotal.toLocaleString()}</span>
+ <span>฿{addonsTotal.toLocaleString()}</span>
                   </div>
                   <div className="flex justify-between text-lg font-bold pt-2 border-t mt-2">
                     <span>Total:</span>
                     <span>฿{total.toLocaleString()}</span>
                   </div>
                 </div>
-              </CardContent>
-              <CardFooter>
+ </CardContent>
+ <CardFooter>
                 <Button size="lg" className="w-full" asChild disabled={cartItems.length === 0}>
                   <Link href="/confirmation-document">Proceed to Confirmation</Link>
                 </Button>

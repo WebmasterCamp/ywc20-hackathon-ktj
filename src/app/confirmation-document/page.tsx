@@ -48,8 +48,8 @@ const ConfirmationDocumentContent = () => {
       <div className="container mx-auto px-4 py-8 flex flex-col items-center justify-center min-h-[calc(100vh-200px)]">
         <Card className="w-full max-w-lg text-center">
           <CardHeader>
-            <CheckCircle className="h-16 w-16 mx-auto text-green-500 mb-4" />
-            <CardTitle className="text-2xl font-headline">Payment Successful!</CardTitle>
+ <CheckCircle className="h-16 w-16 mx-auto text-green-500 mb-4" />
+ <CardTitle className="text-2xl font-headline">ชำระเงินสำเร็จ!</CardTitle>
           </CardHeader>
           <CardContent>
             <p className="text-muted-foreground mb-2">Your rental agreement has been confirmed and payment processed.</p>
@@ -60,10 +60,10 @@ const ConfirmationDocumentContent = () => {
           </CardContent>
           <CardFooter className="flex flex-col gap-2">
             <Button className="w-full" asChild>
-              <Link href="/rental-history">View Rental History</Link>
+ <Link href="/rental-history">ดูประวัติการเช่า</Link>
             </Button>
             <Button variant="outline" className="w-full" asChild>
-              <Link href="/">Back to Homepage</Link>
+ <Link href="/">กลับหน้าหลัก</Link>
             </Button>
           </CardFooter>
         </Card>
@@ -77,18 +77,18 @@ const ConfirmationDocumentContent = () => {
       <Card className="max-w-3xl mx-auto">
         <CardHeader className="text-center">
           <FileText className="h-12 w-12 mx-auto text-primary mb-3" />
-          <CardTitle className="text-2xl font-bold font-headline">Rental Tool Agreement</CardTitle>
-          <CardDescription>Please review and accept the terms to proceed.</CardDescription>
+ <CardTitle className="text-2xl font-bold font-headline">ข้อตกลงการเช่าเครื่องมือ</CardTitle>
+ <CardDescription>โปรดตรวจสอบและยอมรับข้อกำหนดเพื่อดำเนินการต่อ</CardDescription>
         </CardHeader>
         <CardContent>
           {!isAccepted ? (
             <>
               <div className="mb-6 p-4 bg-secondary rounded-lg border">
-                <h3 className="font-semibold mb-2">Rental Summary:</h3>
-                <p><strong>Renter:</strong> {rentalDetails.renterName}</p>
-                <p><strong>Tools:</strong> {rentalDetails.toolList.join(', ')}</p>
-                <p><strong>Duration:</strong> {rentalDetails.rentalDuration} (From: {rentalDetails.startDate} To: {rentalDetails.endDate})</p>
-                <p><strong>Estimated Price:</strong> {rentalDetails.rentalPrice}</p>
+ <h3 className="font-semibold mb-2">สรุปการเช่า:</h3>
+ <p><strong>ผู้เช่า:</strong> {rentalDetails.renterName}</p>
+ <p><strong>เครื่องมือ:</strong> {rentalDetails.toolList.join(', ')}</p>
+ <p><strong>ระยะเวลาเช่า:</strong> {rentalDetails.rentalDuration} (ตั้งแต่: {rentalDetails.startDate} ถึง: {rentalDetails.endDate})</p>
+ <p><strong>ราคาประมาณการ:</strong> {rentalDetails.rentalPrice}</p>
               </div>
 
               <h3 className="font-semibold mb-2">Terms and Conditions:</h3>
@@ -104,14 +104,14 @@ const ConfirmationDocumentContent = () => {
               
               <div className="mt-6 p-3 bg-yellow-50 border border-yellow-200 rounded-md text-yellow-700 flex items-start">
                 <ShieldAlert className="h-5 w-5 mr-2 mt-0.5 flex-shrink-0" />
-                <p className="text-xs">Please read the terms carefully. This is a legally binding agreement. By accepting, you confirm you are authorized to enter this agreement.</p>
+ <p className="text-xs">โปรดอ่านเงื่อนไขอย่างละเอียด นี่คือข้อตกลงที่มีผลผูกพันทางกฎหมาย การยอมรับถือว่าคุณได้รับการอนุมัติให้เข้าทำข้อตกลงนี้</p>
               </div>
             </>
           ) : (
             <div className="text-center py-8">
-              <CheckCircle className="h-12 w-12 mx-auto text-green-500 mb-3" />
-              <h3 className="text-xl font-semibold">Agreement Accepted!</h3>
-              <p className="text-muted-foreground mt-2">You will now be redirected to payment.</p>
+ <CheckCircle className="h-12 w-12 mx-auto text-green-500 mb-3" />
+ <h3 className="text-xl font-semibold">ข้อตกลงได้รับการยอมรับแล้ว!</h3>
+ <p className="text-muted-foreground mt-2">คุณจะถูกนำไปยังหน้าชำระเงิน</p>
             </div>
           )}
         </CardContent>
@@ -119,8 +119,8 @@ const ConfirmationDocumentContent = () => {
           <CardFooter className="flex flex-col sm:flex-row justify-end gap-3">
             <Button variant="outline" onClick={handleDecline} className="w-full sm:w-auto">Decline</Button>
             <Button onClick={handleAccept} className="w-full sm:w-auto">Accept & Proceed to Payment</Button>
-          </CardFooter>
-        )}
+ </CardFooter>
+ )}
       </Card>
     </div>
   );

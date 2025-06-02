@@ -44,7 +44,7 @@ const AiSuggestToolPage = () => {
       } else {
         setError('Unsupported file type. Please upload a text, DOC, DOCX, or PDF file.');
         setFile(null);
-        setFileContent('');
+ setFileContent('');
         toast.error("Unsupported File", { description: "Please upload a document file (TXT, DOC, DOCX, PDF)." });
       }
     }
@@ -96,7 +96,7 @@ const AiSuggestToolPage = () => {
   const handleRemoveSuggestion = (indexToRemove: number) => {
     setSuggestions(prev => prev.filter((_, index) => index !== indexToRemove));
     toast("Tool removed", { description: "The tool has been removed from the suggestion list." });
-  };
+ };
 
   const handleAddAllToCart = () => {
     if (suggestions.length === 0) {
@@ -120,18 +120,18 @@ const AiSuggestToolPage = () => {
     <div className="container mx-auto px-4 py-8">
       <Card className="max-w-2xl mx-auto">
         <CardHeader>
-          <CardTitle className="text-2xl font-bold font-headline">AI Tool Suggester</CardTitle>
-          <CardDescription>Describe your project or upload a document, and our AI will suggest suitable tools.</CardDescription>
+ <CardTitle className="text-2xl font-bold font-headline">AI แนะนำเครื่องมือ</CardTitle>
+ <CardDescription>อธิบายโปรเจกต์ของคุณ หรืออัปโหลดเอกสาร แล้ว AI ของเราจะแนะนำเครื่องมือที่เหมาะสมให้</CardDescription>
         </CardHeader>
         <form onSubmit={handleSubmit}>
           <CardContent className="space-y-6">
             <Tabs value={inputType} onValueChange={(value) => { setInputType(value as 'text' | 'file'); setError(null); setSuggestions([]); }} className="w-full">
               <TabsList className="grid w-full grid-cols-2">
                 <TabsTrigger value="text">
-                  <Type className="mr-2 h-5 w-5" /> Text Input
+ <Type className="mr-2 h-5 w-5" /> ป้อนข้อความ
                 </TabsTrigger>
                 <TabsTrigger value="file">
-                  <UploadCloud className="mr-2 h-5 w-5" /> File Upload
+ <UploadCloud className="mr-2 h-5 w-5" /> อัปโหลดไฟล์
                 </TabsTrigger>
               </TabsList>
               <TabsContent value="text" className="pt-4">
@@ -146,7 +146,7 @@ const AiSuggestToolPage = () => {
                 />
               </TabsContent>
               <TabsContent value="file" className="pt-4">
-                <Label htmlFor="project-document-input" className="block text-sm font-medium mb-2">Upload your project plan or brief</Label>
+ <Label htmlFor="project-document-input" className="block text-sm font-medium mb-2">อัปโหลดแผนงานหรือสรุปโครงการของคุณ</Label>
                 <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-dashed rounded-md hover:border-primary transition-colors">
                     <div className="space-y-1 text-center">
                       <UploadCloud className="mx-auto h-10 w-10 text-muted-foreground" />
@@ -155,12 +155,12 @@ const AiSuggestToolPage = () => {
                           htmlFor="project-document-input-inner"
                           className="relative cursor-pointer rounded-md font-medium text-primary hover:text-primary/80 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-primary"
                         >
-                          <span>Upload a file</span>
+ <span>อัปโหลดไฟล์</span>
                           <Input id="project-document-input-inner" name="project-document" type="file" className="sr-only" onChange={handleFileChange} accept=".txt,.doc,.docx,.pdf" />
                         </Label>
-                        <p className="pl-1">or drag and drop</p>
+ <p className="pl-1">หรือลากและวาง</p>
                       </div>
-                      <p className="text-xs text-muted-foreground">TXT, DOC, DOCX, PDF files up to 5MB</p>
+ <p className="text-xs text-muted-foreground">ไฟล์ TXT, DOC, DOCX, PDF ขนาดไม่เกิน 5MB</p>
                     </div>
                   </div>
                 {file && (
@@ -170,7 +170,7 @@ const AiSuggestToolPage = () => {
                       <span className="text-sm font-medium">{file.name}</span>
                       <span className="text-xs text-muted-foreground">({(file.size / 1024).toFixed(1)} KB)</span>
                     </div>
-                    <Button variant="ghost" size="sm" onClick={() => { setFile(null); setFileContent(''); setError(null); }}>Clear</Button>
+ <Button variant="ghost" size="sm" onClick={() => { setFile(null); setFileContent(''); setError(null); }}>ล้าง</Button>
                   </div>
                 )}
               </TabsContent>
@@ -179,7 +179,7 @@ const AiSuggestToolPage = () => {
             {error && (
               <div className="p-3 bg-destructive/10 border border-destructive/30 rounded-md text-destructive flex items-center">
                 <AlertTriangle className="h-5 w-5 mr-2" />
-                <p className="text-sm font-medium">{error}</p>
+ <p className="text-sm font-medium">{error}</p>
               </div>
             )}
 
@@ -195,7 +195,7 @@ const AiSuggestToolPage = () => {
             {suggestions.length > 0 && (
               <div className="mt-6 pt-6 border-t">
                 <div className="flex justify-between items-center mb-3">
-                  <h3 className="text-lg font-semibold font-headline">Suggested Tools:</h3>
+ <h3 className="text-lg font-semibold font-headline">เครื่องมือแนะนำ:</h3>
                 </div>
                 <div className="space-y-2 bg-secondary/30 p-4 rounded-md">
                   <ul className="space-y-1">
@@ -216,7 +216,7 @@ const AiSuggestToolPage = () => {
                   </ul>
                   <Button onClick={handleAddAllToCart} className="w-full mt-3">
                     <ShoppingCart className="mr-2 h-4 w-4" />
-                    Add All to Cart ({suggestions.length})
+ เพิ่มทั้งหมดลงในรถเข็น ({suggestions.length})
                   </Button>
                 </div>
               </div>

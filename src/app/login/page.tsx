@@ -11,19 +11,19 @@ export default function LoginPage() {
       <Card className="w-full max-w-sm">
         <CardHeader className="text-center">
           <LogIn className="h-10 w-10 mx-auto text-primary mb-3" />
-          <CardTitle className="text-2xl font-bold font-headline">Login to Chang Chao</CardTitle>
-          <CardDescription>Access your account and manage your rentals.</CardDescription>
+          <CardTitle className="text-2xl font-bold font-headline">เข้าสู่ระบบ ช่างเช่า</CardTitle>
+          <CardDescription>เข้าถึงบัญชีของคุณและจัดการการเช่าของคุณ</CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="space-y-1">
-            <Label htmlFor="email">Email Address</Label>
+            <Label htmlFor="email">ที่อยู่อีเมล</Label>
             <Input id="email" type="email" placeholder="you@example.com" />
           </div>
           <div className="space-y-1">
             <div className="flex justify-between items-baseline">
-                <Label htmlFor="password">Password</Label>
+                <Label htmlFor="password">รหัสผ่าน</Label>
                 <Link href="/forgot-password" passHref className="text-xs text-primary hover:underline">
-                    Forgot password?
+                    ลืมรหัสผ่าน?
                 </Link>
             </div>
             <Input id="password" type="password" placeholder="••••••••" />
@@ -32,9 +32,9 @@ export default function LoginPage() {
         <CardFooter className="flex flex-col gap-4">
           <Button className="w-full">Login</Button>
           <p className="text-xs text-center text-muted-foreground">
-            Do not have an account?{" "}
+            ยังไม่มีบัญชีใช่ไหม?{" "}
             <Link href="/signup" className="text-primary hover:underline font-medium">
-              Sign Up
+              ลงทะเบียน
             </Link>
           </p>
         </CardFooter>

@@ -34,7 +34,7 @@ const UploadEvidencePage = () => {
         } else {
           newPreviews.push('file_icon'); 
         }
-      });
+      });;
       setPreviews(prevPreviews => [...prevPreviews, ...newPreviews].slice(0,5));
     }
   };
@@ -69,8 +69,8 @@ const UploadEvidencePage = () => {
     <div className="container mx-auto px-4 py-8">
       <Card className="max-w-2xl mx-auto">
         <CardHeader>
-          <CardTitle className="text-2xl font-bold font-headline">Upload Return Evidence</CardTitle>
-          <CardDescription>For rental ID: {rentalId}. Please upload photos or documents as proof of return condition.</CardDescription>
+          <CardTitle className="text-2xl font-bold font-headline">อัปโหลดหลักฐานการคืน</CardTitle>
+          <CardDescription>สำหรับรหัสการเช่า: {rentalId}. โปรดอัปโหลดรูปภาพหรือเอกสารเป็นหลักฐานสภาพการคืนสินค้า</CardDescription>
         </CardHeader>
         <form onSubmit={handleSubmit}>
           <CardContent className="space-y-6">
@@ -84,12 +84,12 @@ const UploadEvidencePage = () => {
                       htmlFor="file-upload-input"
                       className="relative cursor-pointer rounded-md font-medium text-primary hover:text-primary/80 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-primary"
                     >
-                      <span>Upload files</span>
+                      <span>อัปโหลดไฟล์</span>
                       <Input id="file-upload-input" name="file-upload" type="file" className="sr-only" multiple onChange={handleFileChange} accept="image/*,application/pdf,.doc,.docx" disabled={uploadStatus === 'uploading'} />
                     </Label>
-                    <p className="pl-1">or drag and drop</p>
+                    <p className="pl-1">หรือลากและวาง</p>
                   </div>
-                  <p className="text-xs text-muted-foreground">PNG, JPG, GIF up to 10MB; PDF, DOC up to 5MB</p>
+                  <p className="text-xs text-muted-foreground">PNG, JPG, GIF สูงสุด 10MB; PDF, DOC สูงสุด 5MB</p>
                 </div>
               </div>
             </div>
@@ -97,7 +97,7 @@ const UploadEvidencePage = () => {
             {previews.length > 0 && (
               <div>
                 <h3 className="text-sm font-medium mb-2">Selected Files:</h3>
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 items-center">
                   {previews.map((preview, index) => (
                     <div key={index} className="relative group border rounded-md p-1 aspect-square">
                       {preview === 'file_icon' || !files[index]?.type.startsWith('image/') ? (
@@ -112,7 +112,7 @@ const UploadEvidencePage = () => {
                         type="button"
                         onClick={() => removeFile(index)}
                         className="absolute -top-2 -right-2 bg-destructive text-destructive-foreground rounded-full p-0.5 opacity-0 group-hover:opacity-100 transition-opacity"
-                        aria-label="Remove file"
+ aria-label="ลบไฟล์"
                         disabled={uploadStatus === 'uploading'}
                       >
                         <X className="h-4 w-4" />
@@ -126,14 +126,14 @@ const UploadEvidencePage = () => {
             {uploadStatus === 'failure' && (
                <div className="p-3 bg-destructive/10 border border-destructive/30 rounded-md text-destructive flex items-center">
                 <AlertTriangle className="h-5 w-5 mr-2" />
-                <p className="text-sm font-medium">Upload failed. Please try again.</p>
+                <p className="text-sm font-medium">การอัปโหลดล้มเหลว โปรดลองอีกครั้ง</p>
               </div>
             )}
 
           </CardContent>
           <CardFooter>
             <Button type="submit" className="w-full" disabled={files.length === 0 || uploadStatus === 'uploading' || uploadStatus === 'success'}>
-              {uploadStatus === 'uploading' && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+ {uploadStatus === 'uploading' && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
               {uploadStatus === 'success' && <CheckCircle className="mr-2 h-4 w-4" />}
               {uploadStatus === 'success' ? 'Uploaded Successfully' : 'Submit Evidence'}
             </Button>

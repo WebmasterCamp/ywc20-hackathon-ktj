@@ -44,19 +44,19 @@ export default function RentalHistoryPage() {
     <div className="container mx-auto px-4 py-8">
       <header className="mb-8">
         <h1 className="text-3xl font-bold font-headline flex items-center">
-          <History className="mr-3 h-8 w-8" /> Rental History
+          <History className="mr-3 h-8 w-8" /> ประวัติการเช่า
         </h1>
-        <p className="text-muted-foreground mt-1">View your past and current tool rentals.</p>
+        <p className="text-muted-foreground mt-1">ดูประวัติการเช่าเครื่องมือทั้งที่ผ่านมาและปัจจุบันของคุณ</p>
       </header>
 
       {mockRentalHistory.length === 0 ? (
         <Card className="text-center py-12">
           <CardContent>
             <PackageSearch className="h-16 w-16 mx-auto text-muted-foreground mb-4" />
-            <CardTitle className="text-2xl mb-2">No Rental History Found</CardTitle>
-            <CardDescription className="mb-6">You have not rented any tools yet. Start exploring our catalog!</CardDescription>
+            <CardTitle className="text-2xl mb-2">ไม่พบประวัติการเช่า</CardTitle>
+            <CardDescription className="mb-6">คุณยังไม่ได้เช่าเครื่องมือใดๆ เลย เริ่มสำรวจแคตตาล็อกของเราได้เลย!</CardDescription>
             <Button asChild>
-              <Link href="/equipment">Browse Tools</Link>
+              <Link href="/equipment">สำรวจเครื่องมือ</Link>
             </Button>
           </CardContent>
         </Card>
@@ -78,11 +78,11 @@ export default function RentalHistoryPage() {
                     <div className="flex flex-col sm:flex-row justify-between sm:items-start gap-2">
                         <div>
                             <CardTitle className="text-xl hover:underline">
-                                <Link href={`/rent-detail/${rental.id}`}>{rental.toolName}</Link>
+                                <Link href={`/rent-detail/${rental.id}`}>{rental.toolName}</Link> {/* Keep toolName as is */}
                             </CardTitle>
-                            <CardDescription>Rental ID: {rental.id}</CardDescription>
+                            <CardDescription>หมายเลขการเช่า: {rental.id}</CardDescription>
                         </div>
-                        <span className={`px-2 py-1 text-xs font-semibold rounded-full ${
+                        <span className={`px-2 py-1 text-xs font-semibold rounded-full text-center ${
                             rental.status === 'Returned' ? 'bg-green-100 text-green-700' :
                             rental.status === 'Active' ? 'bg-blue-100 text-blue-700' :
                             'bg-yellow-100 text-yellow-700'
@@ -93,22 +93,22 @@ export default function RentalHistoryPage() {
                   </CardHeader>
                   <CardContent className="grid grid-cols-2 sm:grid-cols-3 gap-x-4 gap-y-2 text-sm">
                     <div>
-                      <p className="text-muted-foreground text-xs">Rental Date</p>
+                      <p className="text-muted-foreground text-xs">วันที่เช่า</p>
                       <p className="font-medium">{rental.rentalDate}</p>
                     </div>
                     <div>
-                      <p className="text-muted-foreground text-xs">Return Date</p>
+                      <p className="text-muted-foreground text-xs">วันที่คืน</p>
                       <p className="font-medium">{rental.returnDate}</p>
                     </div>
                     <div>
-                      <p className="text-muted-foreground text-xs">Total Price</p>
+                      <p className="text-muted-foreground text-xs">ราคารวม</p>
                       <p className="font-medium">{rental.totalPrice}</p>
                     </div>
                   </CardContent>
                    <CardFooter className="p-4 justify-end">
                      <Button variant="outline" size="sm" asChild>
                         <Link href={`/rent-detail/${rental.id}`}>View Details</Link>
-                     </Button>
+                     </Button> {/* Keep "View Details" in English, as it's likely part of the detailed rental page content */}
                    </CardFooter>
                 </div>
               </div>

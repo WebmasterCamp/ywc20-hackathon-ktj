@@ -57,7 +57,7 @@ const BlogPage = () => {
 
 
   if (!article) {
-    return <div className="container mx-auto px-4 py-8 text-center">Loading article...</div>;
+ return <div className="container mx-auto px-4 py-8 text-center">กำลังโหลดบทความ...</div>;
   }
 
   const handleTocClick = (id: string, e: React.MouseEvent) => {
@@ -79,17 +79,17 @@ const BlogPage = () => {
         <header className="mb-8">
           <div className="flex flex-col md:flex-row justify-between md:items-center gap-4 mb-3">
             <h1 className="font-headline text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight flex-1">
-              {article.title}
+ {article.title}
             </h1>
             {article.relatedProducts && article.relatedProducts.length > 0 && (
               <Button asChild variant="default" size="sm" className="shrink-0">
                 <Link href={`/equipment?filter_preset=${article.slug}`}>
-                  <ListChecks className="mr-2 h-4 w-4" /> ดูรายการสินค้า
+ <ListChecks className="mr-2 h-4 w-4" /> ดูรายการสินค้า
                 </Link>
               </Button>
             )}
           </div>
-          
+
           {article.subtitle && <p className="text-lg lg:text-xl text-muted-foreground mb-4">{article.subtitle}</p>}
           
           <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-muted-foreground mb-2">
@@ -97,8 +97,8 @@ const BlogPage = () => {
           </div>
           <div className="flex flex-wrap gap-2">
             <Badge variant="secondary" className="text-xs"><Zap className="h-3 w-3 mr-1" /> {article.difficulty}</Badge>
-            <Badge variant="secondary" className="text-xs"><Clock className="h-3 w-3 mr-1" /> {article.duration}</Badge>
-            <Badge variant="secondary" className="text-xs"><DollarSign className="h-3 w-3 mr-1" /> Cost: {article.cost}</Badge>
+ <Badge variant="secondary" className="text-xs"><Clock className="h-3 w-3 mr-1" /> ระยะเวลา: {article.duration}</Badge>
+ <Badge variant="secondary" className="text-xs"><DollarSign className="h-3 w-3 mr-1" /> ค่าใช้จ่าย: {article.cost}</Badge>
           </div>
         </header>
         
@@ -106,12 +106,12 @@ const BlogPage = () => {
           {/* Table of Contents (Desktop) - Roadmap Style */}
           {article.toc && article.toc.length > 0 && (
             <aside className="hidden lg:block sticky top-24 self-start border rounded-lg p-4 max-h-[calc(100vh-10rem)] overflow-y-auto">
-              <h2 className="text-lg font-semibold mb-4 font-headline">Table of Contents</h2>
+ <h2 className="text-lg font-semibold mb-4 font-headline">สารบัญ</h2>
               <div className="relative"> {/* Wrapper for the line and list */}
                 {/* Main vertical line: 8px from the left of this div */}
-                <div 
+                <div
                   className="absolute left-2 top-0 bottom-0 w-0.5 bg-border z-0"
-                  aria-hidden="true"
+ aria-hidden="true"
                 ></div>
                 <ul className="relative z-10">
                   {article.toc.map(item => (
@@ -120,7 +120,7 @@ const BlogPage = () => {
                       className="relative"
                       // Hierarchical indentation: each level adds 1rem.
                       style={{ paddingLeft: `${(item.level - 2) * 1}rem` }} 
-                    >
+ >
                       <a
                         href={`#${item.id}`}
                         onClick={(e) => handleTocClick(item.id, e)}
@@ -135,7 +135,7 @@ const BlogPage = () => {
                         {/* Dot: positioned to sit on the main vertical line */}
                         <span
                           className={cn(
-                            "absolute top-1/2 -translate-y-1/2 h-2.5 w-2.5 rounded-full border",
+ "absolute top-1/2 -translate-y-1/2 h-2.5 w-2.5 rounded-full border",
                             "left-[3px]", // Dot's left edge is 3px from li's content box start, centering 10px dot on 8px line
                             activeTocId === item.id 
                               ? "bg-primary border-primary ring-1 ring-primary/40 ring-offset-1 ring-offset-background" 
@@ -143,7 +143,7 @@ const BlogPage = () => {
                           )}
                           aria-hidden="true"
                         >
-                        </span>
+ </span>
                         <span className="leading-tight">{item.title}</span>
                       </a>
                     </li>
@@ -157,7 +157,7 @@ const BlogPage = () => {
           <div className="prose prose-lg max-w-none dark:prose-invert prose-headings:font-headline prose-a:text-primary hover:prose-a:underline prose-img:rounded-md prose-img:shadow-md" ref={contentRef}>
             <div className="relative aspect-video rounded-lg overflow-hidden mb-8 shadow-xl">
                 <Image src={article.thumbnail} alt={article.title} layout="fill" objectFit="cover" priority data-ai-hint={article.aiHint || "blog header"} />
-            </div>
+ </div>
             
             <div dangerouslySetInnerHTML={{ __html: article.content || '<p>Content not available.</p>' }} />
           </div>
@@ -167,9 +167,9 @@ const BlogPage = () => {
         {article.relatedProducts && article.relatedProducts.length > 0 && (
           <section className="mt-12 pt-8 border-t">
             <div className="flex justify-between items-center mb-6">
-              <h2 className="font-headline text-2xl font-bold">ของที่ต้องใช้</h2>
+ <h2 className="font-headline text-2xl font-bold">ของที่ต้องใช้</h2>
               <Button variant="default">
-                <ShoppingCart className="mr-2 h-4 w-4" /> Add All to Cart
+ <ShoppingCart className="mr-2 h-4 w-4" /> เพิ่มทั้งหมดลงในตะกร้า
               </Button>
             </div>
             <ScrollArea className="w-full pb-4">

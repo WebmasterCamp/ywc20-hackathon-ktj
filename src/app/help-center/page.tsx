@@ -8,37 +8,37 @@ import Link from "next/link";
 const faqItems = [
   {
     value: "item-1",
-    question: "How do I rent a tool?",
-    answer: "Browse our equipment list, select the tool you need, choose your rental dates, and proceed to checkout. You'll need to create an account if you haven't already."
+    question: "ฉันจะเช่าเครื่องมือได้อย่างไร?",
+    answer: "เลือกดูรายการเครื่องมือของเรา เลือกเครื่องมือที่คุณต้องการ เลือกวันที่ต้องการเช่า และดำเนินการชำระเงิน คุณจะต้องสร้างบัญชีหากยังไม่มี"
   },
   {
     value: "item-2",
-    question: "What are the payment methods accepted?",
-    answer: "We accept major credit/debit cards, e-wallets, and Cash on Delivery for certain locations. You can see all available options at checkout."
+    question: "รับชำระเงินด้วยวิธีใดบ้าง?",
+    answer: "เรารับชำระด้วยบัตรเครดิต/เดบิตหลักๆ, e-wallets และบริการเก็บเงินปลายทางในบางพื้นที่ คุณสามารถดูตัวเลือกทั้งหมดได้ที่หน้าชำระเงิน"
   },
   {
     value: "item-3",
-    question: "What if a tool is damaged during my rental period?",
-    answer: "Please report any damage immediately through your rental details page or by contacting support. Depending on the damage and if you opted for insurance, repair or replacement costs may apply as per our rental agreement."
+    question: "ถ้าเครื่องมือเสียหายระหว่างช่วงเวลาเช่าล่ะ?",
+    answer: "โปรดแจ้งความเสียหายทันทีผ่านหน้ารายละเอียดการเช่าของคุณ หรือติดต่อฝ่ายสนับสนุน ค่าซ่อมแซมหรือเปลี่ยนอาจเกิดขึ้นตามเงื่อนไขสัญญาเช่า ทั้งนี้ขึ้นอยู่กับความเสียหายและการที่คุณเลือกซื้อประกันหรือไม่"
   },
   {
     value: "item-4",
-    question: "How do I return a tool?",
-    answer: "You can return the tool to our designated drop-off points or arrange for a pickup if that service was selected. Ensure you upload return evidence via your rental details page."
+    question: "ฉันจะคืนเครื่องมือได้อย่างไร?",
+    answer: "คุณสามารถนำเครื่องมือมาคืนที่จุดรับคืนที่เรากำหนด หรือนัดหมายให้ไปรับหากคุณเลือกบริการนั้น ตรวจสอบให้แน่ใจว่าได้อัปโหลดหลักฐานการคืนผ่านหน้ารายละเอียดการเช่าของคุณแล้ว"
   },
   {
     value: "item-5",
-    question: "Can I extend my rental period?",
-    answer: "Yes, if the tool is available, you can request an extension through your rental details page. Additional charges will apply."
+    question: "ฉันสามารถขยายเวลาเช่าได้หรือไม่?",
+    answer: "ได้ หากเครื่องมือพร้อมให้เช่าต่อ คุณสามารถขอขยายเวลาผ่านหน้ารายละเอียดการเช่าของคุณได้ จะมีค่าใช้จ่ายเพิ่มเติม"
   }
 ];
 
 export default function HelpCenterPage() {
   return (
     <div className="container mx-auto px-4 py-8">
-      <header className="mb-10 text-center">
+ <header className="mb-10 text-center">
         <HelpCircle className="h-16 w-16 mx-auto text-primary mb-4" />
-        <h1 className="text-4xl font-bold font-headline mb-2">Help Center</h1>
+ <h1 className="text-4xl font-bold font-headline mb-2">ศูนย์ช่วยเหลือ</h1>
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
           Find answers to common questions or get in touch with our support team.
         </p>
@@ -47,7 +47,7 @@ export default function HelpCenterPage() {
       <section className="mb-12 max-w-xl mx-auto">
         <div className="relative">
           <Input
-            type="search"
+ type="search"
             placeholder="Search help articles or FAQs..."
             className="h-12 text-base pl-12 pr-4"
           />
@@ -55,7 +55,7 @@ export default function HelpCenterPage() {
         </div>
       </section>
 
-      <section className="mb-12">
+ <section className="mb-12">
         <h2 className="text-2xl font-semibold font-headline mb-6 text-center">Frequently Asked Questions</h2>
         <Accordion type="single" collapsible className="w-full max-w-2xl mx-auto">
           {faqItems.map(item => (
@@ -72,22 +72,22 @@ export default function HelpCenterPage() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-semibold font-headline mb-6 text-center">Contact Support</h2>
+ <h2 className="text-2xl font-semibold font-headline mb-6 text-center">ติดต่อฝ่ายสนับสนุน</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
           <Card className="hover:shadow-lg transition-shadow">
             <CardHeader className="flex flex-row items-center gap-3">
               <MessageSquare className="h-8 w-8 text-primary" />
-              <CardTitle className="text-xl">Chat With Us</CardTitle>
+ <CardTitle className="text-xl">แชทกับเรา</CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground mb-3">Get instant help from our support agents via live chat.</p>
-              <Button className="w-full">Start Chat</Button>
+ <Button className="w-full">เริ่มแชท</Button>
             </CardContent>
           </Card>
           <Card className="hover:shadow-lg transition-shadow">
             <CardHeader className="flex flex-row items-center gap-3">
               <Phone className="h-8 w-8 text-primary" />
-              <CardTitle className="text-xl">Call Us</CardTitle>
+ <CardTitle className="text-xl">โทรหาเรา</CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground mb-3">Speak directly to a support representative.</p>
