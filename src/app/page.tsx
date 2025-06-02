@@ -116,7 +116,7 @@ export default function HomePage() {
       {/* Hero Section */}
       <section className="relative h-[60vh] min-h-[400px] flex items-center justify-center bg-secondary text-secondary-foreground">
         <Image
-          src="https://placehold.co/1920x1080.png?text=Tools+Workshop"
+          src="https://images.unsplash.com/photo-1631856954655-966f97d809de?q=80&w=2046&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
           alt="Workshop background"
           layout="fill"
           objectFit="cover"
@@ -125,11 +125,10 @@ export default function HomePage() {
         />
         <div className="relative z-10 container mx-auto px-4 text-center">
           <h1 className="font-headline text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
-            Rent The Tools You Need, <br className="hidden sm:inline" />
-            When You Need Them.
+            Never Stop Learning
           </h1>
           <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto">
-            ช่างเช่า - Your trusted partner for professional tool rentals.
+            ช่างที่ดี คือช่างเรียนรู้ - Trusted partner for tool rentals.
           </p>
           <form onSubmit={handleSearchSubmit} className="max-w-xl mx-auto">
             <div ref={searchContainerRef} className="flex relative">

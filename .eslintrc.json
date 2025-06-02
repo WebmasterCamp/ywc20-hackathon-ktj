@@ -1,6 +1,12 @@
 {
-  "extends": [
-    "next/core-web-vitals",
-    "next/typescript"
-  ]
+  "extends": ["next/core-web-vitals", "next/typescript"],
+  "rules": {
+    "@typescript-eslint/strict-boolean-expressions": "error",
+    "@typescript-eslint/no-unnecessary-condition": "error"
+  },
+  "parserOptions": {
+    "project": "./tsconfig.json",
+    "tsconfigRootDir": __dirname,
+    "sourceType": "module"
+  },
 }
