@@ -4,11 +4,12 @@ export const SITE_NAME_THAI = "ช่างเช่า";
 export const NAV_LINKS = [
   { href: "/", label: "Homepage" },
   { href: "/equipment", label: "Equipment List" },
+  { href: "/compare", label: "Compare Tools" },
   { href: "/blog", label: "Blog" },
   { href: "/rental-history", label: "Rental History" },
   { href: "/help-center", label: "Help Center" },
-  { href: "/ai-suggest-tool", label: "AI Tool Suggester" },
 ];
+
 
 export const USER_MENU_LINKS = [
   { href: "/login", label: "Login" },
