@@ -40,12 +40,7 @@ const Navbar = () => {
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between px-4 md:px-6">
         <Link href="/" className="flex items-center gap-2">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-7 w-7 text-primary">
-            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
-            <path d="M12 12l4.49 4.49"></path>
-          </svg>
-          <span className="font-headline text-xl font-bold">{SITE_NAME}</span>
-          <span className="font-body text-lg text-muted-foreground hidden sm:inline">/ {SITE_NAME_THAI}</span>
+          <img className='h-10' src="https://cdn.discordapp.com/attachments/1373320579754627234/1378929568248758312/image.png?ex=683e63bc&is=683d123c&hm=fed7c71bdb9c1b746ed7067dff83b3107493de36ed6a6c6a7dbcc96622add0ac&" alt="logo"/>
         </Link>
 
         <nav className="hidden md:flex items-center space-x-6">
